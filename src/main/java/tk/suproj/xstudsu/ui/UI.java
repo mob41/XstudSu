@@ -83,7 +83,7 @@ public class UI {
 		frame.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent arg0) {
-				if (SU.patched){
+				if (SU.isPatched()){
 					if (chckbxmntmUnpatchWhenClose.isSelected()){
 						SU.start();
 					}
@@ -132,7 +132,7 @@ public class UI {
 
 		tglbtnPatch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {		
-				if (SU.patched){
+				if (SU.isPatched()){
 					if (SU.start()){
 						tglbtnPatch.setSelected(false);
 						tglbtnPatch.setText("Patch");
@@ -399,7 +399,7 @@ public class UI {
 	                	if (SU.checkInstall() == 0){
 	                		logs.append("NOTE: Couldn't find Xstudent. Giving up.\n");
 	                	} else {
-	                		if (!SU.patched){
+	                		if (!SU.isPatched()){
 		                		if (SU.start()){
 									tglbtnPatch.setSelected(false);
 									tglbtnPatch.setText("Patch");
@@ -430,7 +430,7 @@ public class UI {
 	                	if (SU.checkInstall() == 0){
 	                		logs.append("NOTE: Couldn't find Xstudent. Giving up.\n");
 	                	} else {
-	                		if (SU.patched){
+	                		if (SU.isPatched()){
 		                		if (SU.stop()){
 									tglbtnPatch.setSelected(true);
 									tglbtnPatch.setText("Unpatch");
