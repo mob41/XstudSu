@@ -86,16 +86,17 @@ public class SU {
 	 */
 	public static boolean start(){
 		UI.logs.append("NOTE: Starting xstudent...\n");
-		if(ver32_64){
+		switch (getVer32_64bit()){
+		case 32:
 			path = path32;
-		}
-		else
-		{
+			break;
+		case 64:
 			path = path64;
+			break;
+		default:
+			UI.logs.append("ERR: XCLASS could not be found.\n");
+			return false;
 		}
-		
-		System.out.println("Location: " + path);
-		
 		File file = new File(path + "\\xstudent-bak.exe");
 		if(!file.exists()){
 			UI.logs.append("ERR: Could not find Xstudent! Can't start it.\n");
@@ -113,10 +114,7 @@ public class SU {
 		}
 		try {
 			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} catch (InterruptedException ignore){}
 		file = new File(path + "\\xstudent.exe");
 		if(!file.exists()){
 			UI.logs.append("ERR: Could not start Xstudent.\n");
@@ -134,14 +132,17 @@ public class SU {
 	 */
 	public static boolean stop(){
 		UI.logs.append("NOTE: Stopping xstudent...\n");
-		if(ver32_64){
+		switch (getVer32_64bit()){
+		case 32:
 			path = path32;
-		}
-		else
-		{
+			break;
+		case 64:
 			path = path64;
+			break;
+		default:
+			UI.logs.append("ERR: XCLASS could not be found.\n");
+			return false;
 		}
-		System.out.println("Location: " + path);
 		File file = new File(path + "\\xstudent.exe");
 		if(!file.exists()){
 			UI.logs.append("ERR: Could not find Xstudent! Can't stop it.\n");
@@ -160,10 +161,7 @@ public class SU {
 		}
 		try {
 			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} catch (InterruptedException ignore){}
 		file = new File(path + "\\xstudent-bak.exe");
 		if(!file.exists()){
 			UI.logs.append("ERR: Could not stop Xstudent. Access denied?\n");
