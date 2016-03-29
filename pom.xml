@@ -5,4 +5,20 @@
   <name>XstudSu</name>
   <description>A smart GUI to disable XCLASS application from running, with hiding functions.</description>
   <version>2.2.0-BETA</version>
+  <build>
+  	<plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>2.4</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>tk.suproj.xstudsu.Main</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+  </plugins>
+  </build>
 </project>

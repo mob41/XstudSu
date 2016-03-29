@@ -29,6 +29,7 @@ import java.io.File;
 import java.awt.Toolkit;
 import javax.swing.JToolBar;
 import javax.swing.JToggleButton;
+import javax.swing.SwingConstants;
 
 public class UI {
 
@@ -103,6 +104,7 @@ public class UI {
 		mntmPatch.setEnabled(false);
 		mntmUnpatch.setEnabled(false);
 		JLabel lblXstudsu = new JLabel("XstudSu 2.2.0-BETA");
+		lblXstudsu.setHorizontalAlignment(SwingConstants.CENTER);
 		lblXstudsu.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		mntmUnpatch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -168,33 +170,33 @@ public class UI {
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addComponent(lblXstudsu, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(20)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+					.addContainerGap()
+					.addComponent(tglbtnPatch, GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+					.addContainerGap())
+				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING)
+						.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+							.addContainerGap()
+							.addComponent(lblStatus, GroupLayout.DEFAULT_SIZE, 390, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addGap(20)
+							.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)))
 					.addGap(18))
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblStatus)
-					.addContainerGap(326, Short.MAX_VALUE))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap()
-					.addComponent(lblXstudentVer)
-					.addContainerGap(231, Short.MAX_VALUE))
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(130)
-					.addGroup(groupLayout.createParallelGroup(Alignment.TRAILING, false)
-						.addComponent(tglbtnPatch, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(lblXstudsu, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-					.addContainerGap(120, Short.MAX_VALUE))
+					.addComponent(lblXstudentVer, GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
+					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(lblXstudsu)
-					.addGap(16)
-					.addComponent(tglbtnPatch)
-					.addGap(38)
+					.addGap(29)
+					.addComponent(tglbtnPatch, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 181, GroupLayout.PREFERRED_SIZE)
 					.addGap(18)
 					.addComponent(lblStatus)
