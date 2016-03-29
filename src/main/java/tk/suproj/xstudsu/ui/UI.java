@@ -102,7 +102,7 @@ public class UI {
 		JScrollPane scrollPane = new JScrollPane();
 		mntmPatch.setEnabled(false);
 		mntmUnpatch.setEnabled(false);
-		JLabel lblXstudsu = new JLabel("XstudSu v2.2");
+		JLabel lblXstudsu = new JLabel("XstudSu 2.2.0-BETA");
 		lblXstudsu.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		mntmUnpatch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
