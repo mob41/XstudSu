@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>tk.suproj.xstudsu</groupId>
   <artifactId>XstudSu</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
   <name>XstudSu</name>
   <description>A smart GUI to disable XCLASS application from running, with hiding functions.</description>
+  <version>2.2.0-BETA</version>
 </project>
