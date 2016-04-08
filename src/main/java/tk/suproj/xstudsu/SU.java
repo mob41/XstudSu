@@ -153,7 +153,9 @@ public class SU {
 			//Force stop it for 10 times
 			for (int i = 0; i < 10; i++){
 				Runtime.getRuntime().exec("cmd /C taskkill /IM xstudent.exe");
-				Thread.sleep(500);
+				try {
+					Thread.sleep(500);
+				} catch (InterruptedException ignore){}
 			}
 			Runtime.getRuntime().exec("cmd /C rename \"" + path + "\\xstudent.exe\" xstudent-bak.exe");
 			System.out.println("cmd /C rename \"" + path + "\\xstudent.exe\" xstudent-bak.exe");
