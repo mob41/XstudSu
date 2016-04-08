@@ -150,7 +150,11 @@ public class SU {
 			return false;
 		}
 		try {
-			Runtime.getRuntime().exec("cmd /C taskkill /IM xstudent.exe");
+			//Force stop it for 10 times
+			for (int i = 0; i < 10; i++){
+				Runtime.getRuntime().exec("cmd /C taskkill /IM xstudent.exe");
+				Thread.sleep(500);
+			}
 			Runtime.getRuntime().exec("cmd /C rename \"" + path + "\\xstudent.exe\" xstudent-bak.exe");
 			System.out.println("cmd /C rename \"" + path + "\\xstudent.exe\" xstudent-bak.exe");
 		} catch (IOException e) {
