@@ -402,18 +402,18 @@ public class UI {
 	                		logs.append("NOTE: Couldn't find Xstudent. Giving up.\n");
 	                	} else {
 	                		if (!SU.isPatched()){
-		                		if (SU.start()){
-									tglbtnPatch.setSelected(false);
-									tglbtnPatch.setText("Patch");
-									mntmPatch.setEnabled(true);
-									mntmUnpatch.setEnabled(false);
-								}
-								else
-								{
+		                		if (SU.stop()){
 									tglbtnPatch.setSelected(true);
 									tglbtnPatch.setText("Unpatch");
 									mntmPatch.setEnabled(false);
 									mntmUnpatch.setEnabled(true);
+								}
+								else
+								{
+									tglbtnPatch.setSelected(false);
+									tglbtnPatch.setText("Patch");
+									mntmPatch.setEnabled(true);
+									mntmUnpatch.setEnabled(false);
 								}
 		                	} else {
 		                		logs.append("NOTE: Xstudent is already patched. Giving up.\n");
@@ -433,18 +433,18 @@ public class UI {
 	                		logs.append("NOTE: Couldn't find Xstudent. Giving up.\n");
 	                	} else {
 	                		if (SU.isPatched()){
-		                		if (SU.stop()){
-									tglbtnPatch.setSelected(true);
-									tglbtnPatch.setText("Unpatch");
-									mntmPatch.setEnabled(false);
-									mntmUnpatch.setEnabled(true);
-								}
-								else
-								{
+		                		if (SU.start()){
 									tglbtnPatch.setSelected(false);
 									tglbtnPatch.setText("Patch");
 									mntmPatch.setEnabled(true);
 									mntmUnpatch.setEnabled(false);
+								}
+								else
+								{
+									tglbtnPatch.setSelected(true);
+									tglbtnPatch.setText("Unpatch");
+									mntmPatch.setEnabled(false);
+									mntmUnpatch.setEnabled(true);
 								}
 		                	} else {
 		                		logs.append("NOTE: Xstudent isn't patched. Giving up.\n");
