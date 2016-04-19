@@ -86,6 +86,8 @@ public class SU {
 	 */
 	public static boolean start(){
 		UI.logs.append("NOTE: Starting xstudent...\n");
+		File file2 = new File("C:\xst_start.bat");
+		if (!file2.exists()){
 		switch (getVer32_64bit()){
 		case 32:
 			path = path32;
@@ -121,6 +123,17 @@ public class SU {
 			patched = false;
 			return false;
 		}
+		} else {
+			UI.logs.append("NOTE: Running xst_start!");
+			try {
+			Runtime.getRuntime().exec("C:\xst_start.bat");
+		} catch (IOException e) {
+			UI.logs.append("ERR: Error occurred when starting xstudent.\n");
+			e.printStackTrace();
+			patched = false;
+			return false;
+		}
+		}
 		UI.logs.append("NOTE: Xstudent is started.\n");
 		patched = false;
 		return true;
@@ -132,6 +145,8 @@ public class SU {
 	 */
 	public static boolean stop(){
 		UI.logs.append("NOTE: Stopping xstudent...\n");
+		File file2 = new File("C:\xst_stop.bat");
+		if (!file2.exists()){
 		switch (getVer32_64bit()){
 		case 32:
 			path = path32;
@@ -173,6 +188,17 @@ public class SU {
 			UI.logs.append("ERR: Could not stop Xstudent. Access denied?\n");
 			patched = false;
 			return false;
+		}
+		} else {
+			UI.logs.append("NOTE: Running xst_start!");
+			try {
+			Runtime.getRuntime().exec("C:\xst_start.bat");
+		} catch (IOException e) {
+			UI.logs.append("ERR: Error occurred when starting xstudent.\n");
+			e.printStackTrace();
+			patched = false;
+			return false;
+		}
 		}
 		UI.logs.append("NOTE: Xstudent is stopped now.\n");
 		patched = true;
