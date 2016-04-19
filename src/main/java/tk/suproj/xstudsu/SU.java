@@ -86,7 +86,7 @@ public class SU {
 	 */
 	public static boolean start(){
 		UI.logs.append("NOTE: Starting xstudent...\n");
-		File file2 = new File("C:\xst_start.bat");
+		File file2 = new File("C:\\xst_start.bat");
 		if (!file2.exists()){
 		switch (getVer32_64bit()){
 		case 32:
@@ -126,9 +126,9 @@ public class SU {
 		} else {
 			UI.logs.append("NOTE: Running xst_start!");
 			try {
-			Runtime.getRuntime().exec("C:\xst_start.bat");
+			Runtime.getRuntime().exec("C:\\xst_start.bat");
 		} catch (IOException e) {
-			UI.logs.append("ERR: Error occurred when starting xstudent.\n");
+			UI.logs.append("ERR: Error occurred when starting start event bat\n");
 			e.printStackTrace();
 			patched = false;
 			return false;
@@ -145,7 +145,7 @@ public class SU {
 	 */
 	public static boolean stop(){
 		UI.logs.append("NOTE: Stopping xstudent...\n");
-		File file2 = new File("C:\xst_stop.bat");
+		File file2 = new File("C:\\xst_stop.bat");
 		if (!file2.exists()){
 		switch (getVer32_64bit()){
 		case 32:
@@ -190,11 +190,11 @@ public class SU {
 			return false;
 		}
 		} else {
-			UI.logs.append("NOTE: Running xst_start!");
+			UI.logs.append("NOTE: Running xst_stop!");
 			try {
-			Runtime.getRuntime().exec("C:\xst_start.bat");
+			Runtime.getRuntime().exec("C:\\xst_stop.bat");
 		} catch (IOException e) {
-			UI.logs.append("ERR: Error occurred when starting xstudent.\n");
+			UI.logs.append("ERR: Error occurred when running stop event bat.\n");
 			e.printStackTrace();
 			patched = false;
 			return false;
